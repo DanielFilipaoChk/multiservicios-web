@@ -1,0 +1,68 @@
+@if (service) {
+  <div class="modal-backdrop" (click)="closeModal()">
+    <div class="modal-container" (click)="$event.stopPropagation()">
+      <!-- Botón cerrar -->
+      <button class="close-btn" (click)="closeModal()">
+        <lucide-icon [img]="XIcon" [size]="22"></lucide-icon>
+      </button>
+
+      <!-- Encabezado -->
+      <div class="modal-header">
+        <div class="service-image">
+          <img [src]="service.image" [alt]="service.name" />
+        </div>
+
+        <h2>{{ service.name }}</h2>
+
+        <p>
+          {{ service.description }}
+        </p>
+      </div>
+
+      <!-- Descripción completa -->
+      @if (service.fullDescription) {
+        <div class="section">
+          <h3>Descripción</h3>
+
+          <p>
+            {{ service.fullDescription }}
+          </p>
+        </div>
+      }
+
+      <!-- Servicios incluidos -->
+      @if (service.features.length) {
+        <div class="section">
+          <h3>¿Qué incluye?</h3>
+
+          <ul>
+            @for (feature of service.features; track feature) {
+              <li>
+                <lucide-icon [img]="CheckIcon" [size]="18"> </lucide-icon>
+
+                {{ feature }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Tiempo -->
+      @if (service.estimatedTime) {
+        <div class="time-box">
+          <lucide-icon [img]="ClockIcon" [size]="20"> </lucide-icon>
+
+          <span>
+            Tiempo estimado:
+            <strong>{{ service.estimatedTime }}</strong>
+          </span>
+        </div>
+      }
+
+      <!-- Botón -->
+      <a class="whatsapp-btn" target="_blank" [href]="getWhatsappLink()">
+        Solicitar por WhatsApp
+      </a>
+    </div>
+  </div>
+}

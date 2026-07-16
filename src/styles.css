@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-bg: #0F0F0F;
+  --color-surface: #111111;
+  --color-primary: #D4AF37;
+  --color-primary-light: #F4D35E;
+  --color-gray: #ECECEC;
+  --color-whatsapp: #25D366;
+  --color-text-on-dark: #FFFFFF;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(15,15,15,0.88), rgba(15,15,15,0.94)),
+    url('/fondoPrincipal.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}

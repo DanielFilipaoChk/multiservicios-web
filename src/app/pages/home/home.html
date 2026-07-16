@@ -1,0 +1,42 @@
+<app-header (search)="onSearch($event)"></app-header>
+<app-hero-banner></app-hero-banner>
+
+<section class="services" id="services">
+  <h2>Servicios disponibles</h2>
+
+  <div class="services-grid">
+    @for (service of services$ | async; track service.id) {
+      @if (!searchTerm || service.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+        <div class="service-card">
+          <div class="card-visual">
+            <lucide-icon
+              [img]="getIcon(service.icon)"
+              [size]="90"
+              class="icon-watermark"
+            ></lucide-icon>
+            <div class="icon-badge">
+              <lucide-icon [img]="getIcon(service.icon)" [size]="22"></lucide-icon>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <div class="card-actions">
+              <button type="button" class="link-details" (click)="openDetails(service)">
+                Detalles
+              </button>
+              <a [href]="getWhatsappLink(service)" target="_blank" class="link-request"
+                >Solicitar</a
+              >
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</section>
+
+<app-service-modal
+  [service]="selectedService"
+  (close)="closeDetails()">
+</app-service-modal>

@@ -1,0 +1,42 @@
+<header class="app-header">
+  <div class="header-container">
+
+    <a class="logo">
+      <img src="logo.png" alt="Logo Yavoi" class="logo-img">
+
+      <div class="logo-text">
+        <span class="brand-name">Yavoi</span>
+        <small>Centro de Soluciones</small>
+      </div>
+    </a>
+
+    <div class="search-bar">
+      <lucide-icon
+        [img]="SearchIcon"
+        [size]="20"
+        class="search-icon">
+      </lucide-icon>
+
+      <input
+        type="text"
+        placeholder="¿Qué servicio necesitas hoy?"
+        [ngModel]="searchTerm"
+        (ngModelChange)="onSearchChange($event)">
+    </div>
+
+    <a
+      [href]="whatsappGeneralLink"
+      target="_blank"
+      class="whatsapp-btn">
+
+      <lucide-icon
+        [img]="WhatsappIcon"
+        [size]="18">
+      </lucide-icon>
+
+      <span>Contáctanos</span>
+
+    </a>
+
+  </div>
+</header>
