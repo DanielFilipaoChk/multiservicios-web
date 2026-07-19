@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d67a"/>
+      <stop offset="50%" stop-color="#d4a02a"/>
+      <stop offset="100%" stop-color="#a9791a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- fondo circular -->
+  <circle cx="64" cy="64" r="62" fill="url(#bg)" stroke="url(#gold)" stroke-width="4"/>
+
+  <!-- anillo interior decorativo -->
+  <circle cx="64" cy="64" r="52" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- llave inglesa -->
+  <g transform="translate(64,64) rotate(-45)">
+    <path d="M -30 -6
+             a 10 10 0 1 1 0 12
+             l 40 0
+             l 0 -12
+             z"
+          fill="url(#gold)"/>
+    <circle cx="-30" cy="0" r="10" fill="url(#bg)" stroke="url(#gold)" stroke-width="3"/>
+    <rect x="10" y="-6" width="20" height="12" rx="2" fill="url(#gold)"/>
+  </g>
+
+  <!-- engrane pequeño superpuesto -->
+  <g transform="translate(64,64) rotate(45)">
+    <circle r="14" fill="url(#bg)" stroke="url(#gold)" stroke-width="3"/>
+    <circle r="5" fill="url(#gold)"/>
+    <g fill="url(#gold)">
+      <rect x="-2.5" y="-19" width="5" height="8" rx="1"/>
+      <rect x="-2.5" y="11" width="5" height="8" rx="1"/>
+      <rect x="-19" y="-2.5" width="8" height="5" rx="1"/>
+      <rect x="11" y="-2.5" width="8" height="5" rx="1"/>
+      <rect x="-2.5" y="-19" width="5" height="8" rx="1" transform="rotate(45)"/>
+      <rect x="-2.5" y="11" width="5" height="8" rx="1" transform="rotate(45)"/>
+      <rect x="-19" y="-2.5" width="8" height="5" rx="1" transform="rotate(45)"/>
+      <rect x="11" y="-2.5" width="8" height="5" rx="1" transform="rotate(45)"/>
+    </g>
+  </g>
+</svg>
